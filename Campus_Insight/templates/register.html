@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home | Campus Insight</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'images/logo.png' %}" rel="shortcut icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'vendor/fontawesome-free/css/all.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/glightbox/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="{% static 'css/register.css' %}" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: ELECSTA
+  * Updated: Bootstrap v5.3.3
+  * Author: ECE STUDENTS
+  ======================================================== -->
+  </head>
+
+  <body class="index-page">
+    {% include 'navbar.html' %}
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title dark-background" data-aos="fade">
+        <div class="container position-relative">
+          <h1>Register Here</h1>
+          <p>Sign Up and Become Part of Our Community.</p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li class="current">Register Here</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- Section Title -->
+      <section id="starter-section" class="starter-section section">
+        <div class="container section-title" data-aos="fade-up">
+          <span>Register Here<br /></span>
+          <h2>Register Here</h2>
+          <p>
+            Join our community today! By creating an account, you'll gain access
+            to a wealth of resources, exclusive events, and a supportive network
+            of peers and professionals. Register now to start your journey with
+            us and unlock a world of opportunities in electronics and
+            communication.
+          </p>
+        </div>
+      </section>
+      <!-- End Section Title -->
+
+      <!-- Register Form -->
+      {% if messages %} {% for message in messages %}
+      <div
+        class="alert alert-{{ message.tags }} alert-dismissible fade show mt-4"
+        role="alert"
+      >
+        {{ message }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %} {% endif %}
+      <div class="container d-flex justify-content-center align-items-center mb-5" style="height: 50vh">
+        <div class="card" style="width: 350px">
+          <div class="card-body">
+            <h3
+              class="p-2 text-primary border rounded"
+              style="text-align: center"
+            >
+              Register Here
+            </h3>
+            <form method="post" novalidate>
+              {% csrf_token %} {% for i in z %} {{i}}
+              <p class="text-danger" style="font-size: 12px">
+                {{i.errors|lower|striptags}}
+              </p>
+              {% endfor %}
+              <div class="row my-2">
+                <div class="col">
+                  <a
+                    href="{% url 'login' %}"
+                    class="btn btn-outline-success form-control"
+                    >Sign In</a
+                  >
+                </div>
+                <div class="col">
+                  <input
+                    type="submit"
+                    value="Sign Up"
+                    class="btn btn-outline-primary form-control"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End Register Form -->
+    </main>
+
+    {% include 'footer.html' %}
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+    <!-- Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

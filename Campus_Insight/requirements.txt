@@ -1,0 +1,5 @@
+django
+django-allauth
+requests
+jwt
+python-docx

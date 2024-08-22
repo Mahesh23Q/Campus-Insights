@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home | Campus Insight</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'images/logo.png' %}" rel="shortcut icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'vendor/fontawesome-free/css/all.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/glightbox/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="{% static 'css/logout.css' %}" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: ELECSTA
+  * Updated: Bootstrap v5.3.3
+  * Author: ECE STUDENTS
+  ======================================================== -->
+  </head>
+
+  <body class="index-page">
+    {% include 'navbar.html' %}
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title dark-background" data-aos="fade">
+        <div class="container position-relative">
+          <h1>Log Out</h1>
+          <p>You’re Logged Out. Have a Great Day!</p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li class="current">Log Out</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- Section Title -->
+      <section id="starter-section" class="starter-section section">
+        <div class="container section-title" data-aos="fade-up">
+          <span>Log Out<br /></span>
+          <h2>Log out</h2>
+          <p>
+            You're almost done! Thank you for using our platform. If you have
+            any feedback or need further assistance, feel free to contact us. We
+            look forward to seeing you again soon.
+          </p>
+        </div>
+        <div class="container section-title" data-aos="fade-up">
+          <span>Need to Login Again<br /></span>
+          <h2>Need to Login Again</h2>
+          <h5 class="my-5">
+            <a href="{% url 'login' %}" class="btn btn-outline-primary"
+              >Click Here</a
+            >
+          </h5>
+        </div>
+      </section>
+      <!-- End Section Title -->
+    </main>
+
+    {% include 'footer.html' %}
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+    <!-- Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

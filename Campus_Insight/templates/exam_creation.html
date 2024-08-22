@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Exam | Campus Insight</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'images/logo.png' %}" rel="shortcut icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'vendor/fontawesome-free/css/all.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/glightbox/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" />
+    <style>
+      /* Add your custom CSS styles here */
+      /* Custom File Input Styling */
+      .custom-file {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: calc(2.25rem + 2px);
+        margin-bottom: 1rem;
+      }
+
+      .custom-file-input {
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0; /* Hide the original input */
+        cursor: pointer;
+      }
+
+      .custom-file-label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .custom-file-label::after {
+        content: "Browse";
+        padding: 0.375rem 0.75rem;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 0 0.25rem 0.25rem 0;
+        transition: background-color 0.3s ease;
+      }
+    </style>
+  </head>
+
+  <body class="index-page">
+    {% include 'navbar.html' %}
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title dark-background" data-aos="fade">
+        <div class="container position-relative">
+          <h1>Exam Section</h1>
+          <p>Create and Manage Your Exams Efficiently.</p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li class="current">Exam Section</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- Section Title -->
+      <section id="starter-section" class="starter-section section">
+        <div class="container section-title" data-aos="fade-up">
+          <span>Exam Section<br /></span>
+          <h2>Exam Section</h2>
+          <p>
+            Welcome to the Exam Creation page. Here, you can easily set up new
+            exams by filling out the form below. Provide details such as the
+            exam title, description, date, and duration to ensure that your
+            exams are well-organized and ready for your students. Use this page
+            to create and manage all your examination needs in a streamlined and
+            efficient manner.
+          </p>
+        </div>
+      </section>
+      <!-- End Section Title -->
+
+      <!-- Exam Creation Page -->
+      <div class="container my-5">
+        <div class="card">
+          <div class="card-body">
+            <h2 style="color: #007bff; text-align: center" class="my-5">Create New Exam</h2>
+            <!-- Divider with gradient line -->
+      <div class="container">
+        <hr
+          style="
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, #0e1d34, #19335c);
+          "
+        />
+      </div>
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <!-- Title and Description -->
+              <div class="form-group row mb-3">
+                <label for="id_title" class="col-md-2 col-form-label"
+                  >Title :-</label
+                >
+                <div class="col-md-4">{{ form.title }}</div>
+                <label for="id_description" class="col-md-2 col-form-label"
+                  >Syllabus :-</label
+                >
+                <div class="col-md-4">{{ form.description }}</div>
+              </div>
+
+              <!-- Date, Start Time, and Duration -->
+              <div class="form-group row mb-3">
+                <label for="id_date" class="col-md-2 col-form-label"
+                  >Date :-</label
+                >
+                <div class="col-md-4">{{ form.date }}</div>
+                <label for="id_start_time" class="col-md-2 col-form-label"
+                  >Start Time :-</label
+                >
+                <div class="col-md-4">{{ form.start_time }}</div>
+              </div>
+              <div class="form-group row mb-3">
+                <label for="id_duration" class="col-md-2 col-form-label"
+                  >Duration :-</label
+                >
+                <div class="col-md-4">{{ form.duration }}</div>
+                  <label for="id_docx_file" class="col-md-2 col-form-label">Docx File :-</label>
+                  <div class="col-md-4">
+                    <div class="custom-file">
+                      {{ form.docx_file }} <!-- This should render the file input -->
+                      <label class="custom-file-label" for="id_docx_file" style="align:center">Choose file</label>
+                    </div>
+                </div>                
+              </div>
+              <!-- Divider with gradient line -->
+      <div class="container">
+        <hr
+          style="
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, #0e1d34, #19335c);
+          "
+        />
+      </div>
+
+              <!-- Submit Button -->
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End Exam Creation Page -->
+    </main>
+
+    {% include 'footer.html' %}
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+    <!-- Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+      document
+        .querySelector(".custom-file-input")
+        .addEventListener("change", function (e) {
+          var fileName = document.getElementById("id_docx_file").files[0].name;
+          var nextSibling = e.target.nextElementSibling;
+          nextSibling.innerText = fileName;
+        });
+    </script>
+  </body>
+</html>
