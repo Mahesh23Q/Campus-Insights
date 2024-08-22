@@ -1,0 +1,421 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home | Campus Insight</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'images/logo.png' %}" rel="shortcut icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'vendor/fontawesome-free/css/all.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/glightbox/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="{% static 'css/about.css' %}" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: ELECSTA
+  * Updated: Bootstrap v5.3.3
+  * Author: ECE STUDENTS
+  ======================================================== -->
+  </head>
+
+  <body class="index-page">
+    {% include 'navbar.html' %}
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title dark-background" data-aos="fade">
+        <div class="container position-relative">
+          <h1>About Us</h1>
+          <p>Meet the Team Behind the Vision.</p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li class="current">About</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- Section Title -->
+      <section id="starter-section" class="starter-section section">
+        <div class="container section-title" data-aos="fade-up">
+          <span>About Us<br /></span>
+          <h2>About Us</h2>
+          <p>
+            Discover who we are and what drives us. At College Insight, we are
+            dedicated to fostering a vibrant community of learners and
+            innovators in electronics and communication. Our mission is to
+            empower students through hands-on experiences, collaborative
+            projects, and industry connections. Learn about our values, goals,
+            and the passionate team behind our initiatives.
+          </p>
+        </div>
+      </section>
+      <!-- End Section Title -->
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container">
+          <div class="row gy-3">
+            <div
+              class="col-lg-6 position-relative align-self-start order-lg-last order-first"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="image-container">
+                <img
+                  src="{% static 'images/about.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <a
+                  href="https://youtu.be/EPh-XTfvC1w?si=zzolCD7qPW8umXYN"
+                  class="glightbox play-btn"
+                ></a>
+              </div>
+            </div>
+            <div
+              class="col-lg-6 about-content order-last order-lg-first"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3>About Us</h3>
+              <p>
+                Electronics & Communication Engineering students explore circuit
+                design, signal processing, and communication systems. Through
+                hands-on projects, they gain expertise in designing circuits and
+                developing communication systems, preparing them for careers in
+                telecommunications, consumer electronics, and aerospace.
+              </p>
+              <ul class="about-list">
+                <li class="about-item">
+                  <i class="bi bi-diagram-3"></i>
+                  <div>
+                    <h5>Quantitative Skills</h5>
+                    <p>
+                      We empower students and future professionals to answer
+                      research questions and harness the power of data.
+                    </p>
+                  </div>
+                </li>
+                <li class="about-item">
+                  <i class="bi bi-fullscreen-exit"></i>
+                  <div>
+                    <h5>Sustainable Learning</h5>
+                    <p>
+                      We support the future development of Coding Club through
+                      mentorship and training.
+                    </p>
+                  </div>
+                </li>
+                <li class="about-item">
+                  <i class="bi bi-broadcast"></i>
+                  <div>
+                    <h5>Collaboration in Learning</h5>
+                    <p>
+                      We establish links between organizations and institutions
+                      which develop quantitative skills.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
+
+      <!-- Stats Section -->
+      <section id="stats" class="stats section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="232"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Projects</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="9"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Events</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="7"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Workshops</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="32"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Team Members</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Stats Section -->
+
+      <!-- Team Section -->
+      <section id="team" class="team section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <span>Our Team<br /></span>
+          <h2>Our Team</h2>
+          <p>
+            Empowering Innovation, Fostering Excellence in Electronics &
+            Communication.
+          </p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-lg-4 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'images/team/team-1.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-content">
+                  <h4>Mahesh Devalla</h4>
+                  <span>President</span>
+                  <p>Guiding Excellence, Empowering Innovation</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+            <div
+              class="col-lg-4 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'images/team/team-2.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-content">
+                  <h4>Murali Vadlamuri</h4>
+                  <span>Vice President</span>
+                  <p>Pioneering Initiatives, Strengthening Community.</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+            <div
+              class="col-lg-4 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="member">
+                <img
+                  src="{% static 'images/team/team-3.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-content">
+                  <h4>Hemanth Venna</h4>
+                  <span>Tressurer</span>
+                  <p>Ensuring Financial Stability, Fostering Growth.</p>
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+          </div>
+        </div>
+      </section>
+      <!-- /Team Section -->
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <span>Frequently Asked Questions</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>
+            This section answers common questions about Campus Insight, helping
+            users understand the platform, its activities, and how to stay
+            informed or get involved.
+          </p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="faq-container">
+                <div
+                  class="faq-item faq-active"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>What is Campus Insight?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Campus Insight typically refers to a section or platform
+                      that provides valuable information about various aspects
+                      of campus life. It aims to keep students, faculty, and
+                      other stakeholders informed and engaged with the
+                      happenings on campus.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq Item -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>What kind of activities does Campus Insight organize?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Campus Insight typically focuses on providing information
+                      and updates rather than organizing activities directly.
+                      However, it can facilitate and highlight various
+                      activities related to campus life.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq Item -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>
+                    How can I stay updated with Campus Insight activities?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      To stay updated with Campus Insight activities, you can
+                      utilize several strategies and platforms that keep you
+                      informed about campus events, news, and opportunities.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq Item -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>Does Campus Insight offer any certification programs?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Campus Insight itself typically functions as a platform
+                      for sharing information and updates about campus
+                      activities, events, and resources. It does not usually
+                      offer certification programs directly. However, it can
+                      provide information about certification programs offered
+                      by other departments or organizations within the campus.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq Item -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /FAQ Section -->
+    </main>
+
+    {% include 'footer.html' %}
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+    <!-- Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

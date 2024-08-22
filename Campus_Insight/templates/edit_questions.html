@@ -1,0 +1,382 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Exam | Campus Insight</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'images/logo.png' %}" rel="shortcut icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'vendor/fontawesome-free/css/all.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/glightbox/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" />
+  </head>
+
+  <body class="index-page">
+    {% include 'navbar.html' %}
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title dark-background" data-aos="fade">
+        <div class="container position-relative">
+          <h1>Exam Section</h1>
+          <p>Create and Manage Your Exams Efficiently.</p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li class="current">Exam Section</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- Section Title -->
+      <section id="starter-section" class="starter-section section">
+        <div class="container section-title" data-aos="fade-up">
+          <span>Exam Section<br /></span>
+          <h2>Exam Section</h2>
+          <p>
+            Welcome to the Exam Creation page. Here, you can easily set up new
+            exams by filling out the form below. Provide details such as the
+            exam title, description, date, and duration to ensure that your
+            exams are well-organized and ready for your students. Use this page
+            to create and manage all your examination needs in a streamlined and
+            efficient manner.
+          </p>
+        </div>
+      </section>
+      <!-- End Section Title -->
+
+      <div class="container my-5">
+        <h1>{{ exam.title }} - Questions</h1>
+        <div class="card">
+          <div class="card-body">
+            {% for question in questions %}
+            <div class="question" id="question-{{ question.id }}">
+              <h4>
+                Question:
+                <span class="question-text">{{ question.question_text }}</span>
+                <input
+                  type="text"
+                  class="form-control d-none question-input"
+                  value="{{ question.question_text }}"
+                />
+              </h4>
+              <ol type="A">
+                <li>
+                  <span class="option-text">{{ question.option1 }}</span>
+                  <input
+                    type="text"
+                    class="form-control d-none option-input"
+                    value="{{ question.option1 }}"
+                  />
+                </li>
+                <li>
+                  <span class="option-text">{{ question.option2 }}</span>
+                  <input
+                    type="text"
+                    class="form-control d-none option-input"
+                    value="{{ question.option2 }}"
+                  />
+                </li>
+                <li>
+                  <span class="option-text">{{ question.option3 }}</span>
+                  <input
+                    type="text"
+                    class="form-control d-none option-input"
+                    value="{{ question.option3 }}"
+                  />
+                </li>
+                <li>
+                  <span class="option-text">{{ question.option4 }}</span>
+                  <input
+                    type="text"
+                    class="form-control d-none option-input"
+                    value="{{ question.option4 }}"
+                  />
+                </li>
+              </ol>
+              <p>
+                <strong>Correct Answer:</strong>
+                <span class="correct-answer-text">{{ question.correct_option }}</span>
+                <select class="form-control d-none correct-answer-select">
+                  <option
+                    value="{{ question.option1 }}"
+                    {% if question.correct_option == question.option1 %}
+                    selected
+                    {% endif %}
+                  >
+                    {{ question.option1 }}
+                  </option>
+                  <option
+                    value="{{ question.option2 }}"
+                    {% if question.correct_option == question.option2 %}
+                    selected
+                    {% endif %}
+                  >
+                    {{ question.option2 }}
+                  </option>
+                  <option
+                    value="{{ question.option3 }}"
+                    {% if question.correct_option == question.option3 %}
+                    selected
+                    {% endif %}
+                  >
+                    {{ question.option3 }}
+                  </option>
+                  <option
+                    value="{{ question.option4 }}"
+                    {% if question.correct_option == question.option4 %}
+                    selected
+                    {% endif %}
+                  >
+                    {{ question.option4 }}
+                  </option>
+                </select>
+              </p>
+              <button
+                class="btn btn-outline-primary edit-button px-5"
+                onclick="editQuestion({{ question.id }})"
+              >
+                Edit
+              </button>
+              <button
+                class="btn btn-outline-danger mx-2"
+                onclick="deleteQuestion({{ question.id }})"
+              >
+                Delete Question
+              </button>
+              <hr />
+            </div>
+            {% endfor %}
+            <!-- New questions will be appended here -->
+            <div id="new-questions"></div>
+          </div>
+        </div>
+
+        <div class="row">
+        <!-- Add New Question Button -->
+        <div class="col-md-4 text-center mt-4">
+          <button class="btn btn-outline-info" onclick="addNewQuestion()">
+            Add New Question
+          </button>
+        </div>
+
+        <!-- Save All Changes Button -->
+        <div class="col-md-4 text-center mt-4">
+          <a href="{% url 'dashboard' %}" class="btn btn-outline-danger">Cancel</a>
+        </div>
+
+        <!-- Save All Changes Button -->
+        <div class="col-md-4 text-center mt-4">
+          <button
+            class="btn btn-outline-success save-all-button"
+            onclick="saveAllQuestions()"
+          >
+            Save All Changes
+          </button>
+        </div>
+        </div>
+      </div>
+    </main>
+
+    {% include 'footer.html' %}
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+    <!-- Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+      function editQuestion(questionId) {
+        const questionDiv = document.getElementById(`question-${questionId}`);
+
+        // Toggle display for edit mode
+        questionDiv
+          .querySelectorAll(
+            ".question-text, .option-text, .correct-answer-text, .edit-button"
+          )
+          .forEach((element) => {
+            element.classList.add("d-none");
+          });
+        questionDiv
+          .querySelectorAll(
+            ".question-input, .option-input, .correct-answer-select"
+          )
+          .forEach((element) => {
+            element.classList.remove("d-none");
+          });
+      }
+
+      function saveAllQuestions() {
+    const questionsData = [];
+
+    // Collect data from all questions
+    document.querySelectorAll(".question").forEach((questionDiv) => {
+        const questionId = questionDiv.id.split("-")[1];
+        const questionText = questionDiv.querySelector(".question-input").value;
+        const option1 = questionDiv.querySelectorAll(".option-input")[0].value;
+        const option2 = questionDiv.querySelectorAll(".option-input")[1].value;
+        const option3 = questionDiv.querySelectorAll(".option-input")[2].value;
+        const option4 = questionDiv.querySelectorAll(".option-input")[3].value;
+        const correctOption = questionDiv.querySelector(".correct-answer-select").value;
+
+        questionsData.push({
+            id: questionId,
+            question_text: questionText,
+            option1: option1,
+            option2: option2,
+            option3: option3,
+            option4: option4,
+            correct_option: correctOption,
+        });
+    });
+
+    // Send data to the server
+    fetch("{% url 'save_all_questions' exam.id %}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": getCookie("csrftoken"),
+        },
+        body: JSON.stringify(questionsData),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.status === "success") {
+            alert("Questions saved successfully!");
+            location.reload(); // Reload the page to see updated questions
+        } else {
+            alert("Failed to save questions.");
+        }
+    })
+    .catch((error) => {
+        console.error("Error saving questions:", error);
+        alert("An error occurred while saving questions.");
+    });
+}
+
+
+function deleteQuestion(questionId) {
+  if (confirm("Are you sure you want to delete this question?")) {
+      fetch(`/question/${questionId}/delete/`, {
+          method: "DELETE",
+          headers: {
+              "X-CSRFToken": getCookie("csrftoken"),
+          },
+      })
+      .then((response) => response.json())
+      .then((data) => {
+          if (data.success) {
+              document.getElementById(`question-${questionId}`).remove();
+          } else {
+              alert("Failed to delete the question: " + data.error);
+          }
+      })
+      .catch((error) => {
+          console.error("Error deleting question:", error);
+          alert("An error occurred while deleting the question.");
+      });
+  }
+}
+
+
+      function addNewQuestion() {
+        const newQuestionHtml = `
+          <div class="question">
+            <h4>
+              Question:
+              <input type="text" class="form-control question-input" placeholder="Enter question text" />
+            </h4>
+            <ol type="A">
+              <li><input type="text" class="form-control option-input" placeholder="Option 1" /></li>
+              <li><input type="text" class="form-control option-input" placeholder="Option 2" /></li>
+              <li><input type="text" class="form-control option-input" placeholder="Option 3" /></li>
+              <li><input type="text" class="form-control option-input" placeholder="Option 4" /></li>
+            </ol>
+            <p>
+              <strong>Correct Answer:</strong>
+              <select class="form-control correct-answer-select">
+                <option value="">Select Correct Option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+              </select>
+            </p>
+            <button
+              class="btn btn-outline-danger mx-2"
+              onclick="this.closest('.question').remove()"
+            >
+              Delete Question
+            </button>
+            <hr />
+          </div>
+        `;
+
+        document.getElementById("new-questions").insertAdjacentHTML("beforeend", newQuestionHtml);
+      }
+
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }    
+    </script>
+  </body>
+</html>

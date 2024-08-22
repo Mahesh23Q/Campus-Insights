@@ -1,0 +1,125 @@
+{% load static %}
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div
+    class="container-fluid container-xl position-relative d-flex align-items-center"
+  >
+    <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
+      <img
+        src="{% static 'images/white_1321045.png' %}"
+        alt="Campus Insight Logo"
+      />
+      <h1 class="sitename">Campus Insight</h1>
+    </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li>
+          <a
+            href="{% url 'home' %}"
+            class="{% if request.path == '/' %}active{% endif %}"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'about' %}"
+            class="{% if request.path == '/about/' %}active{% endif %}"
+            >About Us</a
+          >
+        </li>
+        {% if request.user.is_authenticated %}
+        <li>
+          <a
+            href="{% url 'gallery' %}"
+            class="{% if request.path == '/gallery/' %}active{% endif %}"
+            >Gallery</a
+          >
+        </li>
+        <li class="dropdown">
+          <a
+            href="#"
+            class="{% if request.path == '/events/' %}active{% elif request.path == '/activities/' %}active{% elif request.path == '/terms/' %}active{% endif %}"
+            ><span>Services</span>
+            <i class="bi bi-chevron-down toggle-dropdown"></i
+          ></a>
+          <ul>
+            <li><a href="{% url 'events' %}">Events</a></li>
+            <li><a href="{% url 'activities' %}">Activities</a></li>
+            <li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="{% url 'contact' %}"
+            class="{% if request.path == '/contact/' %}active{% endif %}"
+            >Contact</a
+          >
+        </li>
+        <li class="dropdown">
+          <a
+            href="{% url 'profile'%}"
+            class="{% if request.path == '/profile/' %}active{% elif request.path == '/dashboard/' %}active{% elif request.path == '/EduProctor/' %}active{% endif %}"
+            ><i class="fa-regular fa-user"></i>
+            <i class="bi bi-chevron-down toggle-dropdown"></i
+          ></a>
+          <ul>
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li>
+              <a
+                href="#"
+                onclick="document.getElementById('logout-form').submit();"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </li>
+        {% else %}
+        <li>
+          <a
+            href="{% url 'terms' %}"
+            class="{% if request.path == '/terms/' %}active{% endif %}"
+            >Terms & Conditions</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'contact' %}"
+            class="{% if request.path == '/contact/' %}active{% endif %}"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'login' %}"
+            class="{% if request.path == '/login/' %}active{% endif %}"
+            >Login</a
+          >
+        </li>
+        {% endif %}
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+  </div>
+</header>
+
+<form
+  id="logout-form"
+  action="{% url 'logout' %}"
+  method="post"
+  style="display: none"
+>
+  {% csrf_token %}
+</form>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("a[onclick]").forEach(function (element) {
+      element.addEventListener("click", function (event) {
+        event.preventDefault();
+        const formId = this.getAttribute("onclick").match(
+          /document\.getElementById\('(.+)'\)\.submit\(\)/
+        )[1];
+        document.getElementById(formId).submit();
+      });
+    });
+  });
+</script>

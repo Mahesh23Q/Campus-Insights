@@ -1,0 +1,713 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home | Campus Insight</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'images/logo.png' %}" rel="shortcut icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'vendor/fontawesome-free/css/all.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'vendor/glightbox/css/glightbox.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: ELECSTA
+  * Updated: Bootstrap v5.3.3
+  * Author: ECE STUDENTS
+  ======================================================== -->
+  </head>
+
+  <body class="index-page">
+    {% include 'navbar.html' %}
+
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section dark-background">
+        <img
+          src="{% static 'images/world-dotted-map.png' %}"
+          alt=""
+          class="hero-bg"
+          data-aos="fade-in"
+        />
+        <div class="container pt-5">
+          <div class="row gy-4 d-flex justify-content-between">
+            <div
+              class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
+            >
+              <h2 data-aos="fade-up" style="font-size: x-large">
+                Electronics & Communication Engineering
+              </h2>
+              <p data-aos="fade-up" data-aos-delay="100">
+                To evolve as a Center of Excellence in Electronics and
+                Communication Engineering, we aim to mould technically sound,
+                socially responsible technocrats. Our mission is to foster
+                innovation, critical thinking, and practical skills, preparing
+                students to become leaders in their field. Join us to make a
+                difference in the world.
+              </p>
+              <form
+                action="#"
+                class="form-search d-flex align-items-stretch mb-3"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Projects Done. e.g. Line Follow Robot"
+                />
+                <button type="submit" class="btn btn-primary">Search</button>
+              </form>
+              <div class="row gy-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-3 col-6">
+                  <div class="stats-item text-center w-100 h-100">
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="232"
+                      data-purecounter-duration="0"
+                      class="purecounter"
+                      >232</span
+                    >
+                    <p>Projects</p>
+                  </div>
+                </div>
+                <!-- End Stats Item -->
+                <div class="col-lg-3 col-6">
+                  <div class="stats-item text-center w-100 h-100">
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="7"
+                      data-purecounter-duration="0"
+                      class="purecounter"
+                      >7</span
+                    >
+                    <p>Events</p>
+                  </div>
+                </div>
+                <!-- End Stats Item -->
+                <div class="col-lg-3 col-6">
+                  <div class="stats-item text-center w-100 h-100">
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="5"
+                      data-purecounter-duration="0"
+                      class="purecounter"
+                      >5</span
+                    >
+                    <p>Workshops</p>
+                  </div>
+                </div>
+                <!-- End Stats Item -->
+              </div>
+            </div>
+            <div
+              class="col-lg-5 order-1 order-lg-2 hero-img"
+              data-aos="zoom-out"
+            >
+              <img
+                src="{% static 'images/hero.jpg' %}"
+                class="img-fluid mb-3 mb-lg-0"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <!-- Features Section -->
+      <section id="features" class="features section">
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-4 col-md-6 feature-item d-flex"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="icon flex-shrink-0">
+                <i class="fa-solid fa-list-check"></i>
+              </div>
+              <div>
+                <h4 class="title">Projects</h4>
+                <p class="description">
+                  Working on projects helps you develop a range of skills,
+                  including problem-solving, critical thinking, teamwork, and
+                  technical skills specific to your field.
+                </p>
+                <a href="#" class="readmore stretched-link"
+                  ><span>Learn More</span><i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+            <!-- End Feature Item -->
+            <div
+              class="col-lg-4 col-md-6 feature-item d-flex"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="icon flex-shrink-0">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+              <div>
+                <h4 class="title">Workshops</h4>
+                <p class="description">
+                  Workshops offer a chance to connect with industry
+                  professionals, experts, and peers, fostering valuable
+                  relationships and networking opportunities.
+                </p>
+                <a href="#" class="readmore stretched-link"
+                  ><span>Learn More</span><i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+            <!-- End Feature Item -->
+            <div
+              class="col-lg-4 col-md-6 feature-item d-flex"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="icon flex-shrink-0">
+                <i class="fa-solid fa-calendar"></i>
+              </div>
+              <div>
+                <h4 class="title">Events</h4>
+                <p class="description">
+                  Events often feature keynote speakers and success stories that
+                  inspire and motivate participants to pursue their goals and
+                  innovate.
+                </p>
+                <a href="#" class="readmore stretched-link"
+                  ><span>Learn More</span><i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+            <!-- End Feature Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Features Section -->
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container">
+          <div class="row gy-3">
+            <div
+              class="col-lg-6 position-relative align-self-start order-lg-last order-first"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="image-container">
+                <img
+                  src="{% static 'images/about.jpg' %}"
+                  class="img-fluid"
+                  alt=""
+                />
+                <a
+                  href="https://youtu.be/EPh-XTfvC1w?si=zzolCD7qPW8umXYN"
+                  class="glightbox play-btn"
+                ></a>
+              </div>
+            </div>
+            <div
+              class="col-lg-6 about-content order-last order-lg-first"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3>About Us</h3>
+              <p>
+                Electronics & Communication Engineering students explore circuit
+                design, signal processing, and communication systems. Through
+                hands-on projects, they gain expertise in designing circuits and
+                developing communication systems, preparing them for careers in
+                telecommunications, consumer electronics, and aerospace.
+              </p>
+              <ul class="about-list">
+                <li class="about-item">
+                  <i class="bi bi-diagram-3"></i>
+                  <div>
+                    <h5>Quantitative Skills</h5>
+                    <p>
+                      We empower students and future professionals to answer
+                      research questions and harness the power of data.
+                    </p>
+                  </div>
+                </li>
+                <li class="about-item">
+                  <i class="bi bi-fullscreen-exit"></i>
+                  <div>
+                    <h5>Sustainable Learning</h5>
+                    <p>
+                      We support the future development of Coding Club through
+                      mentorship and training.
+                    </p>
+                  </div>
+                </li>
+                <li class="about-item">
+                  <i class="bi bi-broadcast"></i>
+                  <div>
+                    <h5>Collaboration in Learning</h5>
+                    <p>
+                      We establish links between organizations and institutions
+                      which develop quantitative skills.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
+
+      <!-- Services Section -->
+      <section id="services" class="services section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <span>Our Services<br /></span>
+          <h2>Our Services</h2>
+          <p>
+            Discover circuit design, signal processing, and communication
+            systems with our Electronics & Communication Engineering club.
+            Engage in hands-on projects and explore semiconductor physics and
+            VLSI design for future career readiness.
+          </p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container mt-4">
+          <div class="row gy-4">
+            <div class="col-lg-9">
+              <div class="row">
+                <div
+                  class="col-lg-4 col-md-6"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="card">
+                    <div class="card-img">
+                      <img
+                        src="{% static 'images/8M0A5811.jpg' %}"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                    <h3>Events</h3>
+                    <p>
+                      Events provide a platform to meet and connect with
+                      professionals, peers, and industry leaders, expanding your
+                      professional network.
+                    </p>
+                  </div>
+                </div>
+                <!-- End Card Item -->
+                <div
+                  class="col-lg-4 col-md-6"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div class="card">
+                    <div class="card-img">
+                      <img
+                        src="{% static 'images/service-2.jpg' %}"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                    <h3><a href="#" class="stretched-link">Workshops</a></h3>
+                    <p>
+                      Workshops provide practical, hands-on learning experiences
+                      that help participants gain a deeper understanding of
+                      specific topics and techniques.
+                    </p>
+                  </div>
+                </div>
+                <!-- End Card Item -->
+                <div
+                  class="col-lg-4 col-md-6"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <div class="card">
+                    <div class="card-img">
+                      <img
+                        src="{% static 'images/098A5636.jpg' %}"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                    <h3><a href="#" class="stretched-link">Techfest</a></h3>
+                    <p>
+                      Tech fests showcase the latest advancements in technology,
+                      offering participants an opportunity to explore and
+                      interact with cutting-edge innovations.
+                    </p>
+                  </div>
+                </div>
+                <!-- End Card Item -->
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 p-3 bg-light rounded-3">
+              <div class="mb-4">
+                <h4 class="section-title" style="font-size: 20px">
+                  <i class="fas fa-school mr-2" style="color: #007bff"></i> More
+                  Links
+                </h4>
+                <ul class="sidebar">
+                  <li>
+                    <a href="#"
+                      ><i class="fas fa-user-tie mr-2"></i> Faculty Profiles</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fas fa-user-graduate mr-2"></i> Alumni</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="far fa-calendar-alt mr-2"></i> Academic
+                      Calendar</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"><i class="fas fa-images mr-2"></i> Gallery</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fas fa-tasks"></i> Activities</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="far fa-calendar-alt mr-2"></i> Events</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Services Section -->
+
+      <!-- Call To Action Section -->
+      <section
+        id="call-to-action"
+        class="call-to-action section dark-background"
+      >
+        <img src="{% static 'images/cta-bg.jpg' %}" alt="" />
+        <div class="container">
+          <div
+            class="row justify-content-center"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="col-xl-10">
+              <div class="text-center">
+                <h3>Call To Action</h3>
+                <p>
+                  We invite you to become a part of our dynamic Electronics &
+                  Communication Engineering club. Participate in exciting
+                  projects, network with industry leaders, and enhance your
+                  skills in a collaborative environment. Don't miss the
+                  opportunity to shape your future and contribute to
+                  cutting-edge advancements.
+                </p>
+                <a class="cta-btn" href="#">Call To Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Call To Action Section -->
+
+      <!-- Features Section -->
+      <section id="features" class="features-section section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <span class="section-subtitle">Features</span>
+          <h2 class="section-heading">Features</h2>
+          <p class="section-description">
+            Discover the key features and activities of the Campus Insight.
+          </p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container">
+          <!-- Features Item 1 -->
+          <div
+            class="row feature-item align-items-center"
+            data-aos="zoom-out"
+            data-aos-delay="100"
+          >
+            <div class="col-md-5 d-flex align-items-center">
+              <img
+                src="{% static 'images/Workshops-22.jpg' %}"
+                class="feature-image img-fluid rounded-3"
+                alt="Workshops and Technical Sessions"
+              />
+            </div>
+            <div class="col-md-7">
+              <h3 class="feature-title">Workshops and Technical Sessions</h3>
+              <p class="feature-description fst-italic">
+                Workshops and technical sessions aim to enhance practical
+                skills, deepen understanding of theoretical concepts, and
+                provide hands-on experience in specific topics or technologies.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >Gain practical skills in electronics and communication
+                    through hands-on activities.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >Explore diverse topics from programming languages to IoT
+                    and signal processing.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >Network with peers and industry experts to gain insights
+                    into career advancement.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End Features Item -->
+          <!-- Features Item 2 -->
+          <div
+            class="row feature-item align-items-center"
+            data-aos="zoom-out"
+            data-aos-delay="200"
+          >
+            <div class="col-md-5 d-flex align-items-center order-1 order-md-2">
+              <img
+                src="{% static 'images/Mr-Farrhad-Acidwalla.jpg' %}"
+                class="feature-image img-fluid rounded-3"
+                alt="Guest Lectures"
+              />
+            </div>
+            <div class="col-md-7 order-2 order-md-1">
+              <h3 class="feature-title">Guest Lectures</h3>
+              <p class="feature-description fst-italic">
+                Guest lectures can be highly beneficial for students in various
+                fields, including electronics and communication engineering.
+                Here's some relevant information about guest lectures.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >Receive practical insights from professionals in
+                    electronics and communication engineering.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >Opportunities to connect with industry experts and explore
+                    potential career paths.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >Stay informed about industry trends, skills, and career
+                    opportunities.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End Features Item -->
+          <!-- Features Item 3 -->
+          <div class="row feature-item align-items-center" data-aos="zoom-out">
+            <div class="col-md-5 d-flex align-items-center">
+              <img
+                src="{% static 'images/Creative-Collaboration.jpg' %}"
+                class="feature-image img-fluid rounded-3"
+                alt="Collaborations"
+              />
+            </div>
+            <div class="col-md-7">
+              <h3 class="feature-title">Collaborations</h3>
+              <p class="feature-description fst-italic">
+                Partnering with other student clubs, organizations, or
+                universities for joint events, conferences, or research
+                projects.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >Leverage shared resources and expertise to achieve mutual
+                    goals effectively.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >Foster innovation through diverse perspectives and
+                    skills.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >Ensure successful collaborations with clear communication
+                    and defined roles.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End Features Item -->
+        </div>
+      </section>
+      <!-- End Features Section -->
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <span>Frequently Asked Questions</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>
+            This section answers common questions about Campus Insight, helping
+            users understand the platform, its activities, and how to stay
+            informed or get involved.
+          </p>
+        </div>
+        <!-- End Section Title -->
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="faq-container">
+                <div
+                  class="faq-item faq-active"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>What is Campus Insight?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Campus Insight typically refers to a section or platform
+                      that provides valuable information about various aspects
+                      of campus life. It aims to keep students, faculty, and
+                      other stakeholders informed and engaged with the
+                      happenings on campus.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq Item -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>What kind of activities does Campus Insight organize?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Campus Insight typically focuses on providing information
+                      and updates rather than organizing activities directly.
+                      However, it can facilitate and highlight various
+                      activities related to campus life.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq Item -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>
+                    How can I stay updated with Campus Insight activities?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      To stay updated with Campus Insight activities, you can
+                      utilize several strategies and platforms that keep you
+                      informed about campus events, news, and opportunities.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq Item -->
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                  <i class="faq-icon bi bi-question-circle"></i>
+                  <h3>Does Campus Insight offer any certification programs?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Campus Insight itself typically functions as a platform
+                      for sharing information and updates about campus
+                      activities, events, and resources. It does not usually
+                      offer certification programs directly. However, it can
+                      provide information about certification programs offered
+                      by other departments or organizations within the campus.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq Item -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /FAQ Section -->
+    </main>
+
+    {% include 'footer.html' %}
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+    <!-- Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
